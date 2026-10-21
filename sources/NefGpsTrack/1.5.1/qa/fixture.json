@@ -1,0 +1,2310 @@
+{
+  "schema": "nef-gps-track/1",
+  "createdUtcMs": 1767226740000,
+  "mode": "track",
+  "points": [
+    {
+      "t": 1767225600000,
+      "lat": 1.0,
+      "lon": 2.0,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225610000,
+      "lat": 1.00005,
+      "lon": 2.0001,
+      "alt": 100.42,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225620000,
+      "lat": 1.0001,
+      "lon": 2.0001997,
+      "alt": 100.83,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225630000,
+      "lat": 1.00015,
+      "lon": 2.0002989,
+      "alt": 101.24,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225640000,
+      "lat": 1.0002,
+      "lon": 2.0003973,
+      "alt": 101.64,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225650000,
+      "lat": 1.00025,
+      "lon": 2.0004948,
+      "alt": 102.02,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225660000,
+      "lat": 1.0003,
+      "lon": 2.000591,
+      "alt": 102.4,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225670000,
+      "lat": 1.00035,
+      "lon": 2.0006858,
+      "alt": 102.75,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225680000,
+      "lat": 1.0004,
+      "lon": 2.0007788,
+      "alt": 103.09,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225690000,
+      "lat": 1.00045,
+      "lon": 2.0008699,
+      "alt": 103.41,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225700000,
+      "lat": 1.0005,
+      "lon": 2.0009589,
+      "alt": 103.7,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225710000,
+      "lat": 1.00055,
+      "lon": 2.0010454,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225720000,
+      "lat": 1.0006,
+      "lon": 2.0011293,
+      "alt": 104.21,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225730000,
+      "lat": 1.00065,
+      "lon": 2.0012104,
+      "alt": 104.42,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225740000,
+      "lat": 1.0007,
+      "lon": 2.0012884,
+      "alt": 104.6,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225750000,
+      "lat": 1.00075,
+      "lon": 2.0013633,
+      "alt": 104.74,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225760000,
+      "lat": 1.0008,
+      "lon": 2.0014347,
+      "alt": 104.86,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225770000,
+      "lat": 1.00085,
+      "lon": 2.0015026,
+      "alt": 104.94,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225780000,
+      "lat": 1.0009,
+      "lon": 2.0015667,
+      "alt": 104.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225790000,
+      "lat": 1.00095,
+      "lon": 2.0016268,
+      "alt": 105.0,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225800000,
+      "lat": 1.001,
+      "lon": 2.0016829,
+      "alt": 104.98,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225810000,
+      "lat": 1.00105,
+      "lon": 2.0017348,
+      "alt": 104.92,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225820000,
+      "lat": 1.0011,
+      "lon": 2.0017824,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225830000,
+      "lat": 1.00115,
+      "lon": 2.0018255,
+      "alt": 104.7,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225840000,
+      "lat": 1.0012,
+      "lon": 2.0018641,
+      "alt": 104.55,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225850000,
+      "lat": 1.00125,
+      "lon": 2.001898,
+      "alt": 104.36,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225860000,
+      "lat": 1.0013,
+      "lon": 2.0019271,
+      "alt": 104.14,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225870000,
+      "lat": 1.00135,
+      "lon": 2.0019514,
+      "alt": 103.89,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225880000,
+      "lat": 1.0014,
+      "lon": 2.0019709,
+      "alt": 103.62,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225890000,
+      "lat": 1.00145,
+      "lon": 2.0019854,
+      "alt": 103.32,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225900000,
+      "lat": 1.0015,
+      "lon": 2.001995,
+      "alt": 102.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225910000,
+      "lat": 1.00155,
+      "lon": 2.0019996,
+      "alt": 102.65,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225920000,
+      "lat": 1.0016,
+      "lon": 2.0019991,
+      "alt": 102.29,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225930000,
+      "lat": 1.00165,
+      "lon": 2.0019937,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225940000,
+      "lat": 1.0017,
+      "lon": 2.0019833,
+      "alt": 101.52,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225950000,
+      "lat": 1.00175,
+      "lon": 2.001968,
+      "alt": 101.12,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225960000,
+      "lat": 1.0018,
+      "lon": 2.0019477,
+      "alt": 100.71,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225970000,
+      "lat": 1.00185,
+      "lon": 2.0019226,
+      "alt": 100.29,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225980000,
+      "lat": 1.0019,
+      "lon": 2.0018926,
+      "alt": 99.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225990000,
+      "lat": 1.00195,
+      "lon": 2.0018579,
+      "alt": 99.46,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226000000,
+      "lat": 1.002,
+      "lon": 2.0018186,
+      "alt": 99.05,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226010000,
+      "lat": 1.00205,
+      "lon": 2.0017747,
+      "alt": 98.64,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226020000,
+      "lat": 1.0021,
+      "lon": 2.0017264,
+      "alt": 98.25,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226030000,
+      "lat": 1.00215,
+      "lon": 2.0016738,
+      "alt": 97.86,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226040000,
+      "lat": 1.0022,
+      "lon": 2.001617,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226050000,
+      "lat": 1.00225,
+      "lon": 2.0015561,
+      "alt": 97.14,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226060000,
+      "lat": 1.0023,
+      "lon": 2.0014914,
+      "alt": 96.81,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226070000,
+      "lat": 1.00235,
+      "lon": 2.0014229,
+      "alt": 96.5,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226080000,
+      "lat": 1.0024,
+      "lon": 2.0013509,
+      "alt": 96.22,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226090000,
+      "lat": 1.00245,
+      "lon": 2.0012755,
+      "alt": 95.96,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226100000,
+      "lat": 1.0025,
+      "lon": 2.0011969,
+      "alt": 95.73,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226110000,
+      "lat": 1.00255,
+      "lon": 2.0011154,
+      "alt": 95.53,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226120000,
+      "lat": 1.0026,
+      "lon": 2.001031,
+      "alt": 95.35,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226130000,
+      "lat": 1.00265,
+      "lon": 2.0009441,
+      "alt": 95.22,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226140000,
+      "lat": 1.0027,
+      "lon": 2.0008548,
+      "alt": 95.11,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226150000,
+      "lat": 1.00275,
+      "lon": 2.0007633,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226160000,
+      "lat": 1.0028,
+      "lon": 2.00067,
+      "alt": 95.01,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226170000,
+      "lat": 1.00285,
+      "lon": 2.000575,
+      "alt": 95.0,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226180000,
+      "lat": 1.0029,
+      "lon": 2.0004785,
+      "alt": 95.04,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226190000,
+      "lat": 1.00295,
+      "lon": 2.0003808,
+      "alt": 95.1,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226200000,
+      "lat": 1.003,
+      "lon": 2.0002822,
+      "alt": 95.21,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226210000,
+      "lat": 1.00305,
+      "lon": 2.0001829,
+      "alt": 95.34,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226220000,
+      "lat": 1.0031,
+      "lon": 2.0000832,
+      "alt": 95.51,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226230000,
+      "lat": 1.00315,
+      "lon": 1.9999832,
+      "alt": 95.71,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226240000,
+      "lat": 1.0032,
+      "lon": 1.9998833,
+      "alt": 95.93,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226250000,
+      "lat": 1.00325,
+      "lon": 1.9997836,
+      "alt": 96.19,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226260000,
+      "lat": 1.0033,
+      "lon": 1.9996845,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226270000,
+      "lat": 1.00335,
+      "lon": 1.9995862,
+      "alt": 96.78,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226280000,
+      "lat": 1.0034,
+      "lon": 1.9994889,
+      "alt": 97.11,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226290000,
+      "lat": 1.00345,
+      "lon": 1.9993929,
+      "alt": 97.46,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226300000,
+      "lat": 1.0035,
+      "lon": 1.9992984,
+      "alt": 97.83,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226310000,
+      "lat": 1.00355,
+      "lon": 1.9992057,
+      "alt": 98.21,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226320000,
+      "lat": 1.0036,
+      "lon": 1.999115,
+      "alt": 98.6,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226330000,
+      "lat": 1.00365,
+      "lon": 1.9990264,
+      "alt": 99.01,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226340000,
+      "lat": 1.0037,
+      "lon": 1.9989403,
+      "alt": 99.42,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226350000,
+      "lat": 1.00375,
+      "lon": 1.9988569,
+      "alt": 99.83,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226360000,
+      "lat": 1.0038,
+      "lon": 1.9987763,
+      "alt": 100.25,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226370000,
+      "lat": 1.00385,
+      "lon": 1.9986987,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226380000,
+      "lat": 1.0039,
+      "lon": 1.9986245,
+      "alt": 101.08,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226390000,
+      "lat": 1.00395,
+      "lon": 1.9985536,
+      "alt": 101.48,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226400000,
+      "lat": 1.004,
+      "lon": 1.9984864,
+      "alt": 101.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226410000,
+      "lat": 1.00405,
+      "lon": 1.9984229,
+      "alt": 102.25,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226420000,
+      "lat": 1.0041,
+      "lon": 1.9983634,
+      "alt": 102.61,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226430000,
+      "lat": 1.00415,
+      "lon": 1.998308,
+      "alt": 102.96,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226440000,
+      "lat": 1.0042,
+      "lon": 1.9982568,
+      "alt": 103.28,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226450000,
+      "lat": 1.00425,
+      "lon": 1.99821,
+      "alt": 103.59,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226460000,
+      "lat": 1.0043,
+      "lon": 1.9981677,
+      "alt": 103.86,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226470000,
+      "lat": 1.00435,
+      "lon": 1.9981299,
+      "alt": 104.12,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226480000,
+      "lat": 1.0044,
+      "lon": 1.9980968,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226490000,
+      "lat": 1.00445,
+      "lon": 1.9980685,
+      "alt": 104.53,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226500000,
+      "lat": 1.0045,
+      "lon": 1.9980449,
+      "alt": 104.69,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226510000,
+      "lat": 1.00455,
+      "lon": 1.9980263,
+      "alt": 104.82,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226520000,
+      "lat": 1.0046,
+      "lon": 1.9980126,
+      "alt": 104.91,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226530000,
+      "lat": 1.00465,
+      "lon": 1.9980039,
+      "alt": 104.97,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226540000,
+      "lat": 1.0047,
+      "lon": 1.9980002,
+      "alt": 105.0,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226550000,
+      "lat": 1.00475,
+      "lon": 1.9980014,
+      "alt": 104.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226560000,
+      "lat": 1.0048,
+      "lon": 1.9980077,
+      "alt": 104.95,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226570000,
+      "lat": 1.00485,
+      "lon": 1.9980189,
+      "alt": 104.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226580000,
+      "lat": 1.0049,
+      "lon": 1.9980351,
+      "alt": 104.76,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226590000,
+      "lat": 1.00495,
+      "lon": 1.9980562,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226600000,
+      "lat": 1.005,
+      "lon": 1.9980822,
+      "alt": 104.44,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226610000,
+      "lat": 1.00505,
+      "lon": 1.9981129,
+      "alt": 104.23,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226620000,
+      "lat": 1.0051,
+      "lon": 1.9981484,
+      "alt": 103.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226630000,
+      "lat": 1.00515,
+      "lon": 1.9981885,
+      "alt": 103.73,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226640000,
+      "lat": 1.0052,
+      "lon": 1.9982331,
+      "alt": 103.44,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226650000,
+      "lat": 1.00525,
+      "lon": 1.9982821,
+      "alt": 103.12,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226660000,
+      "lat": 1.0053,
+      "lon": 1.9983355,
+      "alt": 102.79,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226670000,
+      "lat": 1.00535,
+      "lon": 1.998393,
+      "alt": 102.43,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226680000,
+      "lat": 1.0054,
+      "lon": 1.9984545,
+      "alt": 102.06,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226690000,
+      "lat": 1.00545,
+      "lon": 1.9985198,
+      "alt": 101.67,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226700000,
+      "lat": 1.0055,
+      "lon": 1.9985889,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226710000,
+      "lat": 1.00555,
+      "lon": 1.9986615,
+      "alt": 100.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226720000,
+      "lat": 1.0056,
+      "lon": 1.9987375,
+      "alt": 100.46,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226730000,
+      "lat": 1.00565,
+      "lon": 1.9988166,
+      "alt": 100.04,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226740000,
+      "lat": 1.0057,
+      "lon": 1.9988986,
+      "alt": 99.62,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    }
+  ],
+  "rawPoints": [
+    {
+      "t": 1767225600000,
+      "lat": 1.0,
+      "lon": 2.0,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225610000,
+      "lat": 1.00005,
+      "lon": 2.0001,
+      "alt": 100.42,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225620000,
+      "lat": 1.0001,
+      "lon": 2.0001997,
+      "alt": 100.83,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225630000,
+      "lat": 1.00015,
+      "lon": 2.0002989,
+      "alt": 101.24,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225640000,
+      "lat": 1.0002,
+      "lon": 2.0003973,
+      "alt": 101.64,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225650000,
+      "lat": 1.00025,
+      "lon": 2.0004948,
+      "alt": 102.02,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225660000,
+      "lat": 1.0003,
+      "lon": 2.000591,
+      "alt": 102.4,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225670000,
+      "lat": 1.00035,
+      "lon": 2.0006858,
+      "alt": 102.75,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225680000,
+      "lat": 1.0004,
+      "lon": 2.0007788,
+      "alt": 103.09,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225690000,
+      "lat": 1.00045,
+      "lon": 2.0008699,
+      "alt": 103.41,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225700000,
+      "lat": 1.0005,
+      "lon": 2.0009589,
+      "alt": 103.7,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225710000,
+      "lat": 1.00055,
+      "lon": 2.0010454,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225720000,
+      "lat": 1.0006,
+      "lon": 2.0011293,
+      "alt": 104.21,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225730000,
+      "lat": 1.00065,
+      "lon": 2.0012104,
+      "alt": 104.42,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225740000,
+      "lat": 1.0007,
+      "lon": 2.0012884,
+      "alt": 104.6,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225750000,
+      "lat": 1.00075,
+      "lon": 2.0013633,
+      "alt": 104.74,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225760000,
+      "lat": 1.0008,
+      "lon": 2.0014347,
+      "alt": 104.86,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225770000,
+      "lat": 1.00085,
+      "lon": 2.0015026,
+      "alt": 104.94,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225780000,
+      "lat": 1.0009,
+      "lon": 2.0015667,
+      "alt": 104.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225790000,
+      "lat": 1.00095,
+      "lon": 2.0016268,
+      "alt": 105.0,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225800000,
+      "lat": 1.001,
+      "lon": 2.0016829,
+      "alt": 104.98,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225810000,
+      "lat": 1.00105,
+      "lon": 2.0017348,
+      "alt": 104.92,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225820000,
+      "lat": 1.0011,
+      "lon": 2.0017824,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225830000,
+      "lat": 1.00115,
+      "lon": 2.0018255,
+      "alt": 104.7,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225840000,
+      "lat": 1.0012,
+      "lon": 2.0018641,
+      "alt": 104.55,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225850000,
+      "lat": 1.00125,
+      "lon": 2.001898,
+      "alt": 104.36,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225860000,
+      "lat": 1.0013,
+      "lon": 2.0019271,
+      "alt": 104.14,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225870000,
+      "lat": 1.00135,
+      "lon": 2.0019514,
+      "alt": 103.89,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225880000,
+      "lat": 1.0014,
+      "lon": 2.0019709,
+      "alt": 103.62,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225890000,
+      "lat": 1.00145,
+      "lon": 2.0019854,
+      "alt": 103.32,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225900000,
+      "lat": 1.0015,
+      "lon": 2.001995,
+      "alt": 102.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225910000,
+      "lat": 1.00155,
+      "lon": 2.0019996,
+      "alt": 102.65,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225920000,
+      "lat": 1.0016,
+      "lon": 2.0019991,
+      "alt": 102.29,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225930000,
+      "lat": 1.00165,
+      "lon": 2.0019937,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225940000,
+      "lat": 1.0017,
+      "lon": 2.0019833,
+      "alt": 101.52,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225950000,
+      "lat": 1.00175,
+      "lon": 2.001968,
+      "alt": 101.12,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225960000,
+      "lat": 1.0018,
+      "lon": 2.0019477,
+      "alt": 100.71,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225970000,
+      "lat": 1.00185,
+      "lon": 2.0019226,
+      "alt": 100.29,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225980000,
+      "lat": 1.0019,
+      "lon": 2.0018926,
+      "alt": 99.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767225990000,
+      "lat": 1.00195,
+      "lon": 2.0018579,
+      "alt": 99.46,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226000000,
+      "lat": 1.002,
+      "lon": 2.0018186,
+      "alt": 99.05,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226010000,
+      "lat": 1.00205,
+      "lon": 2.0017747,
+      "alt": 98.64,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226020000,
+      "lat": 1.0021,
+      "lon": 2.0017264,
+      "alt": 98.25,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226030000,
+      "lat": 1.00215,
+      "lon": 2.0016738,
+      "alt": 97.86,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226040000,
+      "lat": 1.0022,
+      "lon": 2.001617,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226050000,
+      "lat": 1.00225,
+      "lon": 2.0015561,
+      "alt": 97.14,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226060000,
+      "lat": 1.0023,
+      "lon": 2.0014914,
+      "alt": 96.81,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226070000,
+      "lat": 1.00235,
+      "lon": 2.0014229,
+      "alt": 96.5,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226080000,
+      "lat": 1.0024,
+      "lon": 2.0013509,
+      "alt": 96.22,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226090000,
+      "lat": 1.00245,
+      "lon": 2.0012755,
+      "alt": 95.96,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226100000,
+      "lat": 1.0025,
+      "lon": 2.0011969,
+      "alt": 95.73,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226110000,
+      "lat": 1.00255,
+      "lon": 2.0011154,
+      "alt": 95.53,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226120000,
+      "lat": 1.0026,
+      "lon": 2.001031,
+      "alt": 95.35,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226130000,
+      "lat": 1.00265,
+      "lon": 2.0009441,
+      "alt": 95.22,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226140000,
+      "lat": 1.0027,
+      "lon": 2.0008548,
+      "alt": 95.11,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226150000,
+      "lat": 1.00275,
+      "lon": 2.0007633,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226160000,
+      "lat": 1.0028,
+      "lon": 2.00067,
+      "alt": 95.01,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226170000,
+      "lat": 1.00285,
+      "lon": 2.000575,
+      "alt": 95.0,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226180000,
+      "lat": 1.0029,
+      "lon": 2.0004785,
+      "alt": 95.04,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226190000,
+      "lat": 1.00295,
+      "lon": 2.0003808,
+      "alt": 95.1,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226200000,
+      "lat": 1.003,
+      "lon": 2.0002822,
+      "alt": 95.21,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226210000,
+      "lat": 1.00305,
+      "lon": 2.0001829,
+      "alt": 95.34,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226220000,
+      "lat": 1.0031,
+      "lon": 2.0000832,
+      "alt": 95.51,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226230000,
+      "lat": 1.00315,
+      "lon": 1.9999832,
+      "alt": 95.71,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226240000,
+      "lat": 1.0032,
+      "lon": 1.9998833,
+      "alt": 95.93,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226250000,
+      "lat": 1.00325,
+      "lon": 1.9997836,
+      "alt": 96.19,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226260000,
+      "lat": 1.0033,
+      "lon": 1.9996845,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226270000,
+      "lat": 1.00335,
+      "lon": 1.9995862,
+      "alt": 96.78,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226280000,
+      "lat": 1.0034,
+      "lon": 1.9994889,
+      "alt": 97.11,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226290000,
+      "lat": 1.00345,
+      "lon": 1.9993929,
+      "alt": 97.46,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226300000,
+      "lat": 1.0035,
+      "lon": 1.9992984,
+      "alt": 97.83,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226310000,
+      "lat": 1.00355,
+      "lon": 1.9992057,
+      "alt": 98.21,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226320000,
+      "lat": 1.0036,
+      "lon": 1.999115,
+      "alt": 98.6,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226330000,
+      "lat": 1.00365,
+      "lon": 1.9990264,
+      "alt": 99.01,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226340000,
+      "lat": 1.0037,
+      "lon": 1.9989403,
+      "alt": 99.42,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226350000,
+      "lat": 1.00375,
+      "lon": 1.9988569,
+      "alt": 99.83,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226360000,
+      "lat": 1.0038,
+      "lon": 1.9987763,
+      "alt": 100.25,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226370000,
+      "lat": 1.00385,
+      "lon": 1.9986987,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226380000,
+      "lat": 1.0039,
+      "lon": 1.9986245,
+      "alt": 101.08,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226390000,
+      "lat": 1.00395,
+      "lon": 1.9985536,
+      "alt": 101.48,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226400000,
+      "lat": 1.004,
+      "lon": 1.9984864,
+      "alt": 101.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226410000,
+      "lat": 1.00405,
+      "lon": 1.9984229,
+      "alt": 102.25,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226420000,
+      "lat": 1.0041,
+      "lon": 1.9983634,
+      "alt": 102.61,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226430000,
+      "lat": 1.00415,
+      "lon": 1.998308,
+      "alt": 102.96,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226440000,
+      "lat": 1.0042,
+      "lon": 1.9982568,
+      "alt": 103.28,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226450000,
+      "lat": 1.00425,
+      "lon": 1.99821,
+      "alt": 103.59,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226460000,
+      "lat": 1.0043,
+      "lon": 1.9981677,
+      "alt": 103.86,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226470000,
+      "lat": 1.00435,
+      "lon": 1.9981299,
+      "alt": 104.12,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226480000,
+      "lat": 1.0044,
+      "lon": 1.9980968,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226490000,
+      "lat": 1.00445,
+      "lon": 1.9980685,
+      "alt": 104.53,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226500000,
+      "lat": 1.0045,
+      "lon": 1.9980449,
+      "alt": 104.69,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226510000,
+      "lat": 1.00455,
+      "lon": 1.9980263,
+      "alt": 104.82,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226520000,
+      "lat": 1.0046,
+      "lon": 1.9980126,
+      "alt": 104.91,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226530000,
+      "lat": 1.00465,
+      "lon": 1.9980039,
+      "alt": 104.97,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226540000,
+      "lat": 1.0047,
+      "lon": 1.9980002,
+      "alt": 105.0,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226550000,
+      "lat": 1.00475,
+      "lon": 1.9980014,
+      "alt": 104.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226560000,
+      "lat": 1.0048,
+      "lon": 1.9980077,
+      "alt": 104.95,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226570000,
+      "lat": 1.00485,
+      "lon": 1.9980189,
+      "alt": 104.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226580000,
+      "lat": 1.0049,
+      "lon": 1.9980351,
+      "alt": 104.76,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226590000,
+      "lat": 1.00495,
+      "lon": 1.9980562,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226600000,
+      "lat": 1.005,
+      "lon": 1.9980822,
+      "alt": 104.44,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226610000,
+      "lat": 1.00505,
+      "lon": 1.9981129,
+      "alt": 104.23,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226620000,
+      "lat": 1.0051,
+      "lon": 1.9981484,
+      "alt": 103.99,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226630000,
+      "lat": 1.00515,
+      "lon": 1.9981885,
+      "alt": 103.73,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226640000,
+      "lat": 1.0052,
+      "lon": 1.9982331,
+      "alt": 103.44,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226650000,
+      "lat": 1.00525,
+      "lon": 1.9982821,
+      "alt": 103.12,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226660000,
+      "lat": 1.0053,
+      "lon": 1.9983355,
+      "alt": 102.79,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226670000,
+      "lat": 1.00535,
+      "lon": 1.998393,
+      "alt": 102.43,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226680000,
+      "lat": 1.0054,
+      "lon": 1.9984545,
+      "alt": 102.06,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226690000,
+      "lat": 1.00545,
+      "lon": 1.9985198,
+      "alt": 101.67,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226700000,
+      "lat": 1.0055,
+      "lon": 1.9985889,
+      "alt": null,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226710000,
+      "lat": 1.00555,
+      "lon": 1.9986615,
+      "alt": 100.87,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226720000,
+      "lat": 1.0056,
+      "lon": 1.9987375,
+      "alt": 100.46,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226730000,
+      "lat": 1.00565,
+      "lon": 1.9988166,
+      "alt": 100.04,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    },
+    {
+      "t": 1767226740000,
+      "lat": 1.0057,
+      "lon": 1.9988986,
+      "alt": 99.62,
+      "hacc": 5.0,
+      "speed": 1.0,
+      "bearing": null,
+      "provider": "gps"
+    }
+  ],
+  "smoothing": "synthetic-public-fixture"
+}

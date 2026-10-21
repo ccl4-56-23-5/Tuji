@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tile.openstreetmap.org https://*.tile.openstreetmap.org; connect-src 'self';">
+<meta name="color-scheme" content="light">
+<title>途记 · 照片 GPS</title>
+<link rel="stylesheet" href="leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M5 21.5c4.6 0 5.8-6.4 10.4-6.4S21.2 19 27 13.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="7" cy="21.3" r="2.6" fill="currentColor"/><circle cx="25.4" cy="12.8" r="4.2" stroke="currentColor" stroke-width="2.2"/></svg>
+      </span>
+      <span class="brand-text">途记<small>沿途的位置，照片的记忆</small></span>
+    </div>
+    <nav id="nav">
+      <i class="nav-pill" aria-hidden="true"></i>
+      <button data-page="record" class="active">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.4" fill="currentColor"/></svg></span>记录
+      </button>
+      <button data-page="library">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8.4c0-2 3.6-3.6 8-3.6s8 1.6 8 3.6-3.6 3.6-8 3.6-8-1.6-8-3.6Z" stroke="currentColor" stroke-width="1.9"/><path d="M4 12.6c0 2 3.6 3.6 8 3.6s8-1.6 8-3.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M4 16.8c0 2 3.6 3.6 8 3.6s8-1.6 8-3.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>路径库
+      </button>
+      <button data-page="photos" class="desktop">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3.2" y="5.4" width="17.6" height="13.2" rx="3.4" stroke="currentColor" stroke-width="1.9"/><circle cx="9" cy="10.4" r="1.5" fill="currentColor"/><path d="M4.6 16.6l4.3-3.6 3.4 2.6 3-2.1 4.1 3.1" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>照片补录
+      </button>
+      <button data-page="settings">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7.6h14M5 12h14M5 16.4h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="9.4" cy="7.6" r="2.1" fill="#fff" stroke="currentColor" stroke-width="1.8"/><circle cx="14.6" cy="12" r="2.1" fill="#fff" stroke="currentColor" stroke-width="1.8"/><circle cx="10.6" cy="16.4" r="2.1" fill="#fff" stroke="currentColor" stroke-width="1.8"/></svg></span>设置
+      </button>
+    </nav>
+    <div class="aside-foot">
+      <p>让每张照片<br>回到它发生的地方。</p>
+      <small>1.5.1 · 本机保存</small>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <div class="head-copy">
+        <div class="eyebrow">途记 / JOURNEY JOURNAL</div>
+        <h1 id="heading">记录沿途</h1>
+      </div>
+      <span class="local-badge"><i aria-hidden="true"></i>本机保存</span>
+    </header>
+
+    <!-- ===== 记录 ===== -->
+    <section id="record" class="page">
+      <div class="hero">
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 420 320" preserveAspectRatio="xMidYMid slice" fill="none">
+            <g class="contours" stroke="currentColor" stroke-width="1">
+              <path d="M-30 96C20 20 150 -10 246 34s96 132 214 118"/>
+              <path d="M-30 128C14 56 140 24 232 66s100 126 218 112"/>
+              <path d="M-30 160C8 92 130 58 218 98s104 120 222 106"/>
+              <path d="M-30 192C2 128 120 92 204 130s108 114 226 100"/>
+              <path d="M-30 224C-4 164 110 126 190 162s112 108 230 94"/>
+              <path d="M-30 256C-10 200 100 160 176 194s116 102 234 88"/>
+            </g>
+            <path class="journey-line" d="M46 262C104 246 62 186 148 168S286 132 262 76s66-30 92-46" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+            <circle cx="46" cy="262" r="7" fill="#fff" stroke="currentColor" stroke-width="3"/>
+            <circle class="route-beacon" cx="354" cy="30" r="14" stroke="currentColor" stroke-width="2"/>
+            <circle cx="354" cy="30" r="5" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div class="hero-top">
+          <div class="hero-copy">
+            <span class="chip">每一次出发，都有迹可循</span>
+            <h2>去拍照吧，<br>沿途交给途记。</h2>
+            <p>开始记录，安心拍摄。<br>结束后，一段旅程自动收入路径库。</p>
+          </div>
+          <div class="sticker-plate hero-plate">
+            <img class="sticker hero-sticker" src="hachi-camera-sticker.png" alt="挂着相机挥手的小八贴纸">
+          </div>
+        </div>
+
+        <div class="dial-wrap">
+          <button class="dial" id="record-action" aria-label="开始记录">
+            <span class="dial-pulse" aria-hidden="true"></span>
+            <span class="dial-pulse d2" aria-hidden="true"></span>
+            <span class="dial-ring" aria-hidden="true"></span>
+            <span class="dial-face">
+              <span class="dial-time" id="elapsed">00:00</span>
+              <span class="dial-label" id="record-action-label">开始记录</span>
+            </span>
+          </button>
+          <div class="record-state"><i aria-hidden="true"></i><span id="record-status">准备就绪</span></div>
+          <div class="record-metrics">
+            <div><strong id="point-count">0</strong><span>本次定位点</span></div>
+            <div><strong id="last-time">—</strong><span>最近定位</span></div>
+          </div>
+        </div>
+
+        <button id="single-action" class="ghost-wide">记录一个位置，用于补录</button>
+        <p class="muted hero-hint">单点补录只取当前位置；照片GPS时间按各自拍摄时间写入。</p>
+      </div>
+
+      <div class="section-head">
+        <h3>记录节奏</h3>
+        <span>随时调整</span>
+      </div>
+      <div class="mode-grid">
+        <button class="mode" data-mode="0">
+          <span class="mode-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2.5 5.5 13.6h5.2L10 21.5l7.6-11.2h-5.3L13 2.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <b>均衡省电</b>
+          <span class="mode-desc">移动约30秒 · 静止约60秒</span>
+        </button>
+        <button class="mode" data-mode="1">
+          <span class="mode-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7.4h3.3l1.5-2.2h6.4l1.5 2.2H20v11.2H4V7.4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12.9" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+          <b>拍摄优先</b>
+          <span class="mode-desc">约10秒记录 · 更细致的轨迹</span>
+        </button>
+      </div>
+      <p class="muted">锁屏记录前，请在设置中开启后台自启动与无限制电池策略。</p>
+    </section>
+
+    <!-- ===== 路径库 ===== -->
+    <section id="library" class="page" hidden>
+      <div class="page-head">
+        <div>
+          <span class="eyebrow">ROUTE LIBRARY</span>
+          <h2>每段路，都值得留存</h2>
+          <p class="muted" id="route-count">你的旅程将出现在这里</p>
+        </div>
+        <button id="import" class="primary desktop">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 16.5V4.8M7.4 9.4 12 4.8l4.6 4.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.6 15.4v2.4a1.8 1.8 0 0 0 1.8 1.8h11.2a1.8 1.8 0 0 0 1.8-1.8v-2.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          导入CLP
+        </button>
+      </div>
+
+      <div class="stat-strip">
+        <div><strong id="stat-routes">0</strong><span>段旅程</span></div>
+        <div><strong id="stat-points">0</strong><span>定位点</span></div>
+        <div><strong id="stat-latest">—</strong><span>最近记录</span></div>
+      </div>
+
+      <div class="journey-note">
+        <div class="sticker-plate xs"><img class="sticker note-sticker" src="hachi-camera-sticker.png" alt="小八贴纸"></div>
+        <p>记录与收藏，都留在本机。<br>选一段旅程，回看沿途的每个位置。</p>
+      </div>
+
+      <div id="routes" class="route-grid"></div>
+
+      <div id="empty" class="empty">
+        <div class="sticker-plate lg"><img class="sticker empty-sticker" src="hachi-camera-sticker.png" alt="等待出发的小八贴纸"></div>
+        <h3>下一段旅程，从这里开始</h3>
+        <p>完成一次记录，或导入一份CLP轨迹。</p>
+      </div>
+    </section>
+
+    <!-- ===== 照片补录（桌面端） ===== -->
+    <section id="photos" class="page" hidden>
+      <div class="page-head">
+        <div>
+          <span class="eyebrow">PHOTO GEOTAGGING</span>
+          <h2>让照片与旅程相遇</h2>
+          <p class="muted">轨迹按拍摄时间计算位置；单点记录对所选照片使用同一位置。GPS日期与时间均按每张照片拍摄时刻转换为UTC，写入新的照片副本（支持 NEF / DNG / JPG / PNG / HEIC）。</p>
+        </div>
+        <div class="sticker-plate sm"><img class="sticker photo-sticker" src="hachi-camera-sticker.png" alt="带着相机的小八贴纸"></div>
+      </div>
+
+      <ol class="steps" id="steps">
+        <li class="active"><b>01</b><span>选择轨迹</span></li>
+        <li><b>02</b><span>导入照片</span></li>
+        <li><b>03</b><span>预览并写入</span></li>
+      </ol>
+
+      <div class="photo-grid">
+        <div class="panel">
+          <div class="field-group">
+            <div class="field-head">
+              <label>使用轨迹<span class="hint" id="track-count">未选择</span></label>
+              <div class="mini-actions">
+                <button type="button" id="tracks-all" class="ghost">全选</button>
+                <button type="button" id="tracks-none" class="ghost">清空</button>
+              </div>
+            </div>
+            <div class="track-picker" id="track-picker"></div>
+            <p class="muted tiny">勾选多条时，为每张照片按时间证据强度自动择优：精确命中定位点 → 曲线插值（前后≤120秒）→ 长间隔估算 → 单点固定位置。</p>
+            <div class="field-head merge-head">
+              <label>曲线生成方式</label>
+              <div class="segmented" id="track-mode" role="radiogroup" aria-label="曲线生成方式">
+                <button type="button" class="seg" data-tracks="separate" role="radio" aria-checked="true">各自成曲线</button>
+                <button type="button" class="seg" data-tracks="merge" role="radio" aria-checked="false">合并为一条</button>
+              </div>
+            </div>
+            <p class="muted tiny" id="track-mode-note"></p>
+          </div>
+
+          <div class="field-group">
+            <div class="field-head">
+              <label>待处理照片<span class="hint" id="photo-count">尚未导入</span></label>
+              <div class="mini-actions">
+                <button type="button" id="photos-pick" class="ghost">选择照片</button>
+                <button type="button" id="photos-clear" class="ghost">清空</button>
+              </div>
+            </div>
+            <div class="photo-list" id="photo-list">把照片拖到窗口任意位置即可导入（NEF / DNG / JPG / PNG / HEIC）</div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="photos-path">或改用照片目录</label>
+              <input id="photos-path" readonly placeholder="选择整个照片文件夹">
+            </div>
+            <button data-pick="photos" class="soft">选择</button>
+          </div>
+          <p class="muted tiny" id="photo-source-note"></p>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="output-path" id="output-label">输出副本目录</label>
+              <input id="output-path" readonly placeholder="选择独立的输出文件夹">
+            </div>
+            <button data-pick="output" class="soft">选择</button>
+          </div>
+          <div class="two-col">
+            <div class="field-group">
+              <label for="offset">相机时区</label>
+              <input id="offset" value="+08:00">
+            </div>
+            <div class="field-group">
+              <label for="correction">相机时间校正（秒）</label>
+              <input id="correction" type="number" value="0">
+            </div>
+          </div>
+          <label class="check switch-line"><input type="checkbox" id="overwrite"><span id="overwrite-label">覆盖照片副本中已有的GPS</span></label>
+          <p class="muted mode-hint" id="mode-hint"></p>
+          <div class="actions stacked">
+            <button id="preview" class="primary">预览匹配</button>
+            <button id="cancel-job" class="danger" hidden>停止处理</button>
+          </div>
+        </div>
+
+        <!-- 右列：处理进度 + 匹配位置纵向堆叠。包一层容器，进度框才会贴合自身内容，
+             不会被左侧长表单拉伸出一大块空白；匹配位置紧贴它下方，两者同宽同列。 -->
+        <div class="photo-side">
+        <div class="panel">
+          <div class="section-head compact">
+            <h3>处理进度</h3>
+            <span id="job-state-chip" class="state-chip">待开始</span>
+          </div>
+          <progress id="job-progress" value="0" max="100"></progress>
+          <p id="job-status" class="muted">先预览，确认匹配结果后再写入。</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>照片</th><th>使用轨迹</th><th>匹配结果</th><th>坐标</th></tr></thead>
+              <tbody id="photo-rows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 匹配位置：右列第二个面板，与处理进度面板同宽同列；电脑端常显，手机端由 refresh() 整个隐藏。 -->
+        <div class="panel photo-map-panel" id="photo-map-panel" hidden>
+          <div class="section-head compact">
+            <h3>匹配位置</h3>
+            <span id="photo-map-summary" class="state-chip">0 张</span>
+          </div>
+          <div class="photo-map-wrap">
+            <div id="photo-map" class="photo-map"></div>
+            <!-- 没有预览结果时盖在地图上的占位提示；此时地图实例还没建，不会加载瓦片。 -->
+            <div class="photo-map-empty" id="photo-map-empty" hidden>
+              <b>预览匹配后，这里按编号显示每张照片的位置</b>
+              <span>图钉编号与上方表格的行号一致</span>
+            </div>
+          </div>
+          <!-- 「写入照片副本」从左侧表单移到这里：地图下方、撑满面板内容区。启用逻辑仍在 refresh()（预览就绪才可点）。 -->
+          <div class="actions stacked map-actions">
+            <button id="write" class="primary" disabled>写入照片副本</button>
+          </div>
+          <p class="muted tiny">图钉编号与上方表格的行号一致；点表格行会定位到对应图钉，点图钉会高亮对应行。</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="panel written-panel" id="written-panel" hidden>
+        <div class="section-head compact">
+          <h3>写入结果预览</h3>
+          <span id="written-summary" class="state-chip done">0 张</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>照片</th><th>使用轨迹</th><th>纬度</th><th>经度</th><th>海拔</th><th>拍摄时间(UTC)</th><th>匹配方式</th></tr></thead>
+            <tbody id="written-rows"></tbody>
+          </table>
+        </div>
+        <p class="muted">以上是实际写入照片并读回验证过的坐标；海拔未知时留空，不填 0。</p>
+      </div>
+    </section>
+
+    <!-- ===== 设置：手机端=记录与系统，电脑端=写入偏好 ===== -->
+    <section id="settings" class="page" hidden>
+      <div class="page-head">
+        <div>
+          <span class="eyebrow mobile-only">让记录安心留在后台</span>
+          <span class="eyebrow desktop">照片写入偏好</span>
+          <h2 class="mobile-only">记录与系统</h2>
+          <h2 class="desktop">写入与设置</h2>
+          <p class="muted mobile-only">这些开关决定锁屏与后台时途记能否继续记录。</p>
+          <p class="muted desktop">决定 GPS 写到哪里，以及每次补录时的默认参数。</p>
+        </div>
+      </div>
+      <div class="stack">
+
+        <!-- 电脑端：写入方式 -->
+        <div class="panel setting desktop">
+          <div class="setting-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.6v10.2M7.8 9.6 12 13.8l4.2-4.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.6 16.2v2.2a1.8 1.8 0 0 0 1.8 1.8h11.2a1.8 1.8 0 0 0 1.8-1.8v-2.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </div>
+          <div class="setting-body">
+            <h3>写入方式</h3>
+            <p>决定 GPS 写进哪个文件。默认新建副本，原始照片不会被改动。</p>
+            <div class="segmented" id="write-mode" role="radiogroup" aria-label="写入方式">
+              <button type="button" class="seg" data-mode="copy" role="radio" aria-checked="true">新建副本</button>
+              <button type="button" class="seg" data-mode="inplace" role="radio" aria-checked="false">覆盖原始文件</button>
+            </div>
+            <p class="island-note" id="write-mode-note"></p>
+          </div>
+        </div>
+
+        <!-- 电脑端：默认相机参数 -->
+        <div class="panel setting desktop">
+          <div class="setting-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.6V12l3 1.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="setting-body">
+            <h3>默认相机时区</h3>
+            <p>照片缺少时区标签时使用。留空则按 +08:00 处理，补录时仍可在表单里临时改。</p>
+            <div class="field-row">
+              <div class="field-group"><input id="default-offset" placeholder="+08:00"></div>
+              <button id="default-offset-save" class="soft">保存</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel setting island-setting mobile-only">
+          <div class="setting-ico island" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.6 20 8v5c0 4.1-3.3 6.6-8 7.4-4.7-.8-8-3.3-8-7.4V8l8-4.4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12.2l2.1 2.1L15.2 10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="setting-body">
+            <h3>小米超级岛<span class="beta">实验</span></h3>
+            <p id="island-status" role="status">正在检查系统支持…</p>
+            <label class="check"><input type="checkbox" id="island-enabled" checked><span>记录时尝试在超级岛显示状态</span></label>
+            <div class="island-extra" id="island-extra" hidden>
+              <div class="island-gates" id="island-gates"></div>
+              <div class="field-group island-business">
+                <label for="island-business">业务标识（正式上岛需填小米审核通过的值）</label>
+                <div class="field-row">
+                  <div class="field-group"><input id="island-business" placeholder="gps_track"></div>
+                  <button id="island-business-save" class="soft">保存</button>
+                </div>
+              </div>
+              <p class="island-note" id="island-test-result"></p>
+            </div>
+          </div>
+          <div class="actions">
+            <button id="island-check" class="soft">重新检测</button>
+            <button id="island-test" class="soft">发送测试</button>
+            <button id="island-diagnose" class="soft">查看诊断</button>
+            <button id="island-settings" class="soft">通知设置</button>
+          </div>
+        </div>
+
+        <div class="panel setting mobile-only">
+          <div class="setting-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6.4-5.6 6.4-10.4A6.4 6.4 0 0 0 5.6 10.6C5.6 15.4 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10.6" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div class="setting-body">
+            <h3>后台定位与自启动</h3>
+            <p>在系统中允许后台定位与自启动，锁屏后仍可持续采集。</p>
+          </div>
+          <div class="actions"><button id="app-settings" class="soft">打开设置</button></div>
+        </div>
+
+        <div class="panel setting mobile-only">
+          <div class="setting-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.4" y="7.2" width="14.4" height="9.6" rx="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M20.6 10.8v2.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M9.8 9.9 7.6 12.4h2.9l-2.2 2.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="setting-body">
+            <h3>电池策略</h3>
+            <p>允许不受电池优化限制，降低后台被系统回收的概率。</p>
+          </div>
+          <div class="actions"><button id="battery" class="soft">设置</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 沿途回看 ===== -->
+    <section id="viewer" class="page" hidden>
+      <div class="page-head viewer-head">
+        <button id="back-library" class="ghost">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.4 6.2 8.6 12l5.8 5.8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          路径库
+        </button>
+        <span id="view-title" class="title-chip"></span>
+        <button id="export-view" class="primary">导出CLP</button>
+      </div>
+
+      <p class="curve-note" id="curve-note"></p>
+
+      <div class="map-card">
+        <div id="map"></div>
+        <p id="map-status" class="map-status">底图加载中…</p>
+      </div>
+
+      <div class="review panel">
+        <div class="section-head compact">
+          <h3>逐点审阅 <span id="node-number" class="count-chip">0 / 0</span></h3>
+          <label class="check"><input id="show-raw" type="checkbox"><span>原始轨迹</span></label>
+        </div>
+        <input id="node-slider" type="range" min="0" max="0" value="0">
+        <div class="actions node-actions">
+          <button id="prev-node" class="soft">← 上一点</button>
+          <select id="node-picker" aria-label="选择节点"></select>
+          <button id="next-node" class="soft">下一点 →</button>
+        </div>
+        <div id="node-detail" class="detail-grid"></div>
+        <p class="muted">只显示当前节点及以前的轨迹；颜色固定对应节点。修正使用全程数据，非实时滤波。</p>
+      </div>
+    </section>
+
+    <div id="notice" role="status" hidden></div>
+  </main>
+</div>
+
+<!-- 拖入 .clp 直接导入：拖到窗口任意位置都视为导入该路径文件 -->
+<div id="dropzone" hidden>
+  <div class="dropzone-card">
+    <span class="dropzone-ico" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 16.6V5.4M7.6 9.8 12 5.4l4.4 4.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.8 15.4v2.4a1.8 1.8 0 0 0 1.8 1.8h10.8a1.8 1.8 0 0 0 1.8-1.8v-2.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+    <b>松手导入</b>
+    <span id="dropzone-hint">.clp 加入路径库，照片加入待处理（NEF / DNG / JPG / PNG / HEIC）</span>
+  </div>
+</div>
+
+<dialog id="confirm">
+  <div class="dialog-ico" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M6.4 7.4h11.2M9.6 7.4V5.8h4.8v1.6M8.2 7.4l.7 10.4a1.6 1.6 0 0 0 1.6 1.5h3a1.6 1.6 0 0 0 1.6-1.5l.7-10.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <h2>删除这条路径？</h2>
+  <p>该路径及本机原始定位点将一并删除。已导出的CLP不受影响。</p>
+  <div class="actions">
+    <button id="keep-route">保留</button>
+    <button id="delete-route" class="danger">删除路径</button>
+  </div>
+</dialog>
+
+<dialog id="confirm-mode">
+  <div class="dialog-ico" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.6 20 8v5c0 4.1-3.3 6.6-8 7.4-4.7-.8-8-3.3-8-7.4V8l8-4.4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8.6v4.2M12 15.8v.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+  </div>
+  <h2>改为直接覆盖原始照片？</h2>
+  <p>写入时会把 GPS 直接写进原始照片文件本身，原片内容将被改变，无法只靠本程序还原。建议同时设置备份目录，写入前会先把原片备份过去。默认的“新建副本”不会改动原片。</p>
+  <div class="actions">
+    <button id="keep-copy">保持新建副本</button>
+    <button id="accept-inplace" class="danger">我了解，改为覆盖原片</button>
+  </div>
+</dialog>
+
+<script src="leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# User data and local research
+data/
+inputs/
+analysis/
+reports/
+outputs/
+temp/
+*.clp
+*.nef
+*.NEF
+# Signing material and credentials
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.pem
+*.key
+*secret*.json
+.env
+.env.*
+local.properties
+# Generated files
+__pycache__/
+*.pyc
+.venv/
+.gradle/
+build/
+dist/
+node_modules/
+sources/NefGpsTrack/1.5.1/qa/ui-151-*.png
+sources/NefGpsTrack/1.5.1/qa/ui-151-verification.json
+
+# Local CLP interoperability password
+**/clp_secret.py
+**/clp-private.properties
