@@ -16,11 +16,11 @@
 | images/windows-settings.png | 电脑设置 |
 | images/windows-library.png | 电脑路径库 |
 
-在安装 Node.js、Playwright 和 Microsoft Edge 的环境中，从仓库根目录执行 `node docs/capture-screenshots.cjs` 重新生成。脚本复用公开 QA 的断言与模拟桥接，取图输出到 docs/images，临时测试产物留在 temp。
+重现以上 1.5.1 截图时，先检出 v1.5.1 标签，并在安装 Node.js、Playwright 和 Microsoft Edge 的环境中从仓库根目录执行 `node docs/capture-screenshots.cjs` 重新生成。脚本复用公开 QA 的断言与模拟桥接，取图输出到 docs/images，临时测试产物留在 temp。
 
 ## 算法示意图
 
-interpolation-demo.png 和 altitude-demo.png 使用完全虚构的数据，直接调用仓库的 curve.py。重现脚本是 render-algorithm-demos.py；不需要真实 CLP 或原发行口令。
+interpolation-demo.png 和 altitude-demo.png 使用完全虚构的数据，直接调用仓库的 curve.py。重现原图时，在 v1.5.1 标签下运行 render-algorithm-demos.py；不需要真实 CLP 或原发行口令。
 
 ## 真实记录的匿名化对比
 

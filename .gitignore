@@ -33,3 +33,7 @@ sources/NefGpsTrack/1.5.1/qa/ui-151-verification.json
 # Local CLP interoperability password
 **/clp_secret.py
 **/clp-private.properties
+
+密钥.md
+sources/NefGpsTrack/1.5.2/qa/ui-151-*.png
+sources/NefGpsTrack/1.5.2/qa/ui-151-verification.json

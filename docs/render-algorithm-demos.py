@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager
 
 repo=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(repo/'sources/NefGpsTrack/1.5.1/windows'))
+sys.path.insert(0,str(repo/'sources/NefGpsTrack/1.5.2/windows'))
 from curve import build_curve,evaluate
 
 font_path=Path(r'C:\Windows\Fonts\msyh.ttc')

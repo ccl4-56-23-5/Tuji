@@ -6,9 +6,9 @@
 
 用 Android 记录旅程，用 Windows 为照片补上拍摄位置。
 
-**Android + Windows · 本机保存 · 多格式照片 GPS · 当前版本 1.5.1**
+**Android + Windows · 本机保存 · 多格式照片 GPS · 当前版本 1.5.2**
 
-[下载安装包](https://github.com/ccl4-56-23-5/Tuji/releases/tag/v1.5.1) · [轨迹怎样计算](#轨迹怎样计算) · [算法详解与公式](docs/TRAJECTORY.md) · [构建源码](BUILD.md)
+[下载安装包](https://github.com/ccl4-56-23-5/Tuji/releases/tag/v1.5.2) · [轨迹怎样计算](#轨迹怎样计算) · [算法详解与公式](docs/TRAJECTORY.md) · [构建源码](BUILD.md)
 
 </div>
 
@@ -37,6 +37,10 @@ flowchart LR
     D --> E
     E --> F[写入照片 GPS 并读回核对]
 ```
+
+## 1.5.2 更新
+
+手机端换算平均海平面高度并保留海拔来源。Windows 修复照片恰好命中缺海拔节点时的补缺，只在已知海拔节点间隔不超过 120 秒时估算并标明来源。手机端补齐页面、回看、弹窗与诊断区的连续过渡。
 
 ## 界面导览
 
@@ -98,7 +102,7 @@ flowchart LR
 | --- | --- | --- |
 | `rawPoints` | 原始定位观测，保留时间与原始字段 | Android 采集 |
 | `points` | 与原始点保持数量、时间对应的节点；水平方向经过漂移处理 | Android 停止记录后 |
-| `curve` | 根据节点重建的时间参数曲线 `pchip-4d-v2` | Windows |
+| `curve` | 根据节点重建的时间参数曲线 `pchip-4d-v3` | Windows |
 | 照片匹配点 | 在照片拍摄时刻对曲线求值，或明确使用单点 | Windows |
 
 ### 第一步：让定位节点少受漂移影响
@@ -134,19 +138,17 @@ $$
 
 **PCHIP 的关键是怎样选这些变化率**：同向变化时用相邻割线斜率的加权调和平均，遇到转折或平台时把内部斜率置零，端点另作限幅。这样各段通过节点，一阶导数连续，并保持各单轴数据的局部单调形状。它不保证二维轨迹不自交，也不做道路匹配。
 
-图中的曲线直接调用本仓库 `curve.py` 求值，节点和时间完全虚构。公式的斜率推导、端点处理及一个可手算的数值例子见 [PCHIP 详解](docs/TRAJECTORY.md#4-pchip-插值的完整计算)。
+图中的曲线用 1.5.1 的源码绘制，直接调用 `curve.py` 求值，节点和时间完全虚构。公式的斜率推导、端点处理及一个可手算的数值例子见 [PCHIP 详解](docs/TRAJECTORY.md#4-pchip-插值的完整计算)。
 
 ### 海拔：缺失值不填零，已知区间内单独插值
 
 ![合成海拔示意：已知节点、跨缺失节点的海拔子曲线与两端未知范围](docs/images/altitude-demo.png)
 
-电脑端先对已有海拔做独立的鲁棒处理，缺失海拔的节点仍保持缺失。随后只取海拔已知的节点，建立 `alt` 子曲线：中间缺失部分可在已知海拔之间计算，首末已知海拔之外不外推。
-
-需要注意当前实现的一个细节：**照片精确命中节点时，匹配器直接返回该节点；若该节点海拔缺失，照片海拔仍为未知。** 非精确命中的插值分支才读取海拔子曲线。详见 [海拔处理与这一边界](docs/TRAJECTORY.md#5-海拔为什么单独处理)。
+电脑端按相邻已知海拔节点的时间间隔分段处理。照片时刻可落在缺失海拔的节点上，只要所属已知节点间隔不超过 120 秒，就可以用海拔子曲线估算并标明来源。超过 120 秒的空档、已知节点首尾以外以及全程无海拔时，海拔均保持未知。示意图来自 1.5.1，用于展示短区间补缺。详见 [海拔处理](docs/TRAJECTORY.md#5-海拔为什么单独处理)。
 
 ### 边界与多轨迹如何处理
 
-| 情况 | 当前 1.5.1 的行为 |
+| 情况 | 当前 1.5.2 的行为 |
 | --- | --- |
 | 相同时间有多个定位 | 照片匹配索引保留水平精度 `hacc` 较小的合格点 |
 | 定位精度低或缺失 | 匹配索引仅使用 `hacc` 非空且不大于 100 米的节点 |
@@ -157,21 +159,21 @@ $$
 | 同级多个候选 | 比较夹逼时间跨度、水平精度，最后按传入顺序稳定排序 |
 | 主动合并轨迹 | 合并连续轨迹节点并重建曲线，单点不参与；段间大空档仍标估算 |
 
-**120 秒是结果分类阈值，不是停止计算的门槛。** 当前版本会跨长空档插值，但标明“估算”；没有道路、运动模型或其他观测来证明空档中的真实行走路线。
+水平位置跨超过 120 秒的空档时标为“长间隔估算”。海拔对超过 120 秒的空档保留未知值。
 
 匹配曲线会先过滤低质量点，而路径库回看曲线使用加载后的节点，所以两者的节点集合可能不同。地图折线还可能为显示而抽稀，照片坐标则直接对曲线求值。完整数据流、公式、源码入口和限制见 **[轨迹计算逻辑详解](docs/TRAJECTORY.md)**。
 
 ## 下载与安装
 
-当前版本 **1.5.1**；Android 包名 `app.nefgpstrack`，版本码 **13**，工程最低版本 **Android 8.0（API 26）**。电脑端为 Windows 桌面程序，使用 WebView2 界面。
+当前版本 **1.5.2**。Android 包名 `app.nefgpstrack`，版本码 **14**，工程最低版本 **Android 8.0（API 26）**。电脑端为 Windows 桌面程序，使用 WebView2 界面。
 
 | 下载 | 用途 |
 | --- | --- |
-| [Android APK](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.1/NefGpsTrack-Android-1.5.1.apk) | 手机记录与导出轨迹 |
-| **[Windows 安装器，推荐](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.1/NefGpsTrack-Setup-1.5.1.exe)** | 首次选择安装位置，已有安装按原位置升级 |
-| [Windows 便携主程序](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.1/NefGpsTrack-Windows-1.5.1.exe) | 直接运行主程序或便携部署 |
-| [发布源码 ZIP](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.1/Tuji-Source-1.5.1.zip) | 与 `v1.5.1` 标签对应的发布时源码快照 |
-| [SHA256SUMS.txt](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.1/SHA256SUMS.txt) | 校验上述下载文件 |
+| [Android APK](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.2/NefGpsTrack-Android-1.5.2.apk) | 手机记录与导出轨迹 |
+| **[Windows 安装器，推荐](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.2/NefGpsTrack-Setup-1.5.2.exe)** | 首次选择安装位置，已有安装按原位置升级 |
+| [Windows 便携主程序](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.2/NefGpsTrack-Windows-1.5.2.exe) | 直接运行主程序或便携部署 |
+| [发布源码 ZIP](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.2/Tuji-Source-1.5.2.zip) | 与 `v1.5.2` 标签对应的发布时源码快照 |
+| [SHA256SUMS.txt](https://github.com/ccl4-56-23-5/Tuji/releases/download/v1.5.2/SHA256SUMS.txt) | 校验上述下载文件 |
 
 最新图文文档随 `main` 更新；要同时获取当前文档与源码，可使用 **Code → Download ZIP** 或克隆仓库。
 
@@ -226,7 +228,7 @@ Windows 数据随安装目录保存：
     程序数据/        settings.json、安装信息、日志等
 ```
 
-安装器检测到有效安装后按原位置升级，保留 `data/`。旧版用户目录的数据可迁移，旧目录保留；卸载提供是否保留数据的选择。完整安装、升级、迁移和卸载的人工验收状态见 [设备验收清单](sources/NefGpsTrack/1.5.1/qa/device_acceptance.md)。
+安装器检测到有效安装后按原位置升级，保留 `data/`。旧版用户目录的数据可迁移，旧目录保留；卸载提供是否保留数据的选择。完整安装、升级、迁移和卸载的人工验收状态见 [设备验收清单](sources/NefGpsTrack/1.5.2/qa/device_acceptance.md)。
 
 轨迹库与照片处理在本机进行，地图底图使用 OpenStreetMap 在线瓦片。CLP 使用固定互通口令，**不提供用户独立口令的保密隔离**。公开仓库不包含原始轨迹文件、用户照片或发行签名材料。
 
@@ -263,7 +265,7 @@ Windows 数据随安装目录保存：
 ## 源码与验证
 
 ```text
-sources/NefGpsTrack/1.5.1/
+sources/NefGpsTrack/1.5.2/
   android/      定位服务、轨迹数据库、Android 应用和 Gradle Wrapper
   windows/      曲线、时间匹配、照片 GPS 写入与 ExifTool 分发包
   installer/    Windows 安装器
@@ -275,6 +277,6 @@ docs/           算法详解、演示曲线与界面截图
 build-android.ps1
 ```
 
-[构建说明](BUILD.md) · [轨迹算法详解](docs/TRAJECTORY.md) · [版本说明](sources/NefGpsTrack/1.5.1/README.md) · [CLP 格式](sources/NefGpsTrack/1.5.1/CLP_FORMAT.md) · [完整维护文档](sources/NefGpsTrack/1.5.1/完整维护文档.md) · [公开源码说明](PUBLICATION.md)
+[构建说明](BUILD.md) · [轨迹算法详解](docs/TRAJECTORY.md) · [版本说明](sources/NefGpsTrack/1.5.2/README.md) · [CLP 格式](sources/NefGpsTrack/1.5.2/CLP_FORMAT.md) · [完整维护文档](sources/NefGpsTrack/1.5.2/维护文档.md) · [公开源码说明](PUBLICATION.md)
 
-轨迹算法、界面与安装包来自已归档的 **1.5.1**。公开源码将原固定互通口令改为本地配置读取，构建前须配置双端相同口令，详见 [BUILD.md](BUILD.md)；未重新构建现有安装包。核心回归、安装器、多格式、协议向量及模拟桥接界面的检查范围，见 [VALIDATION.md](VALIDATION.md)。
+1.5.2 更新了双端海拔处理与手机页面过渡。公开源码将原固定互通口令改为本地配置读取，构建前须配置双端相同口令，详见 [BUILD.md](BUILD.md)；未重新构建现有安装包。核心回归、安装器、多格式、协议向量及模拟桥接界面的检查范围，见 [VALIDATION.md](VALIDATION.md)。

@@ -1,55 +1,28 @@
-# 构建途记 1.5.1
+# 构建途记 1.5.2
 
-建议在 Windows PowerShell 中执行；源码路径包含中文时，Android 构建入口会临时映射 ASCII 盘符，缓存实际保存在仓库的 temp/ 中。所有 .ps1 保持 UTF-8 BOM。
+## 配置 CLP 互通口令
 
-## 先配置本机 CLP 互通口令
+Android 和 Windows 从源码构建时使用同一口令。读取现有 CLP 时，由文件所有者在本机提供兼容口令。
 
-公开源码不包含原发行版的固定口令。Android、Windows 必须使用相同配置才能互读新生成的 CLP；随意更换口令不能解密已有文件。需要读取旧 CLP 时，应由文件所有者在本机提供兼容口令。
-
-- Windows：复制 `windows/clp_secret.example.py` 为同目录 `clp_secret.py`，在本机填写 `CLP_PASSWORD`；或在运行时设置 `NEFGPSTRACK_CLP_PASSWORD` 环境变量。配置模块会优先于环境变量。打包需要内嵌本机配置时，在构建前准备好该文件。
-- Android：复制 `android/clp-private.properties.example` 为同目录 `clp-private.properties`，填写 `clpPassword`；也可用 `NEFGPSTRACK_CLP_PASSWORD` 环境变量或 Gradle 属性 `tujiClpPassword` 注入。构建会生成 `BuildConfig.CLP_PASSWORD`。
-- 两个实际配置文件均已加入 `.gitignore`，不要提交。公共协议测试向量中的测试密码为虚构向量的一部分，与原发行口令无关。
-
-这只是从公开源码中移除固定口令，不等于编译后的程序具有不可提取的密钥存储。现有 APK/EXE 保留原互通行为；本次未改造成用户交互式密码系统。
-
-## Windows
-
-需要 Python 3.12 或兼容版本、WebView2 Runtime；依赖版本见 windows/requirements-build.txt。构建脚本会创建独立虚拟环境并使用源码附带的 ExifTool 13.59 分发包。
-
-```powershell
-$repo = (Get-Location).Path
-& .\sources\NefGpsTrack\1.5.1\windows\build-windows.ps1 `
-  -Python 'C:\Python312\python.exe' `
-  -BuildRoot (Join-Path $repo 'temp\windows-1.5.1') `
-  -OutputDirectory (Join-Path $repo 'outputs\NefGpsTrack\1.5.1')
-```
-
-输出目录须不含同名交付文件。源码运行可安装运行依赖后执行 windows/app.py；完整说明见 windows/README.md。
+- Android 可设置 NEFGPSTRACK_CLP_PASSWORD 环境变量、Gradle 属性 tujiClpPassword，或复制 android/clp-private.properties.example 为 android/clp-private.properties 并配置 clpPassword。
+- Windows 可设置同一环境变量，或复制 windows/clp_secret.example.py 为 windows/clp_secret.py 并配置 CLP_PASSWORD。本地模块优先，打包时可内嵌该模块。
 
 ## Android
 
-需要 JDK 17、Android SDK（build-tools 36.0.0，以及 app/build.gradle.kts 声明的 compileSdk），Gradle Wrapper 已包含。
+安装 JDK 17、Android SDK Platform 37 和 Build Tools 37.0.0，设置 JAVA_HOME、ANDROID_HOME。Windows 建议将仓库克隆到纯 ASCII 路径。项目包含 Gradle Wrapper。
 
-不需要发行签名时，可在 android/ 目录执行 `gradlew.bat :app:assembleDebug`，自行设置 JAVA_HOME、ANDROID_HOME 和位于仓库 temp/ 下的 GRADLE_USER_HOME。中文路径下建议先将工程及 shared/ui 复制到项目 temp/ 中的 ASCII 映射路径。
+从仓库根目录运行 `.\build-android.ps1`，默认完成 Release 构建、Lint 和本地测试。未签名的 APK 位于 Android 工程的 app/build/outputs/apk/release。用 SDK 的 zipalign 和 apksigner 及自己的发行证书签名。已有途记用户请用 Release 附带的原签名 APK 覆盖安装。
 
-发行脚本通过 -ToolRoot 指定本机工具目录，预期结构：android-sdk/、jdk-17.0.10.7-hotspot/、signing/nefgpstrack/release.p12 与 release-secret.json。后者由构建者在本机提供 alias、password 两个字段。仓库不包含原作者签名材料；自行签名的 APK 不能覆盖原签名安装。
+## Windows
 
-```powershell
-$repo = (Get-Location).Path
-& .\build-android.ps1 -Version 1.5.1 `
-  -ToolRoot 'C:\AndroidTools' `
-  -BuildCacheRoot (Join-Path $repo 'temp\NefGpsTrackBuilds') `
-  -GradleUserHome (Join-Path $repo 'temp\gradle-cache')
-```
-
-## 检查
+安装 Python 3.12 和 WebView2 Runtime。在仓库根目录执行：
 
 ```powershell
-python .\sources\NefGpsTrack\1.5.1\qa\test_v120.py
-python .\sources\NefGpsTrack\1.5.1\qa\test_installer.py
-python .\sources\NefGpsTrack\1.5.1\qa\verify_clp1_vector.py
-$env:NEFGPSTRACK_EXIFTOOL = 'C:\Tools\ExifTool\exiftool.exe'
-python .\sources\NefGpsTrack\1.5.1\qa\test_formats.py
+& .\sources\NefGpsTrack\1.5.2\windows\build-windows.ps1 -Python 'C:\Python312\python.exe'
 ```
 
-ui-151.cjs 需要 Node.js、Playwright 与 Microsoft Edge。运行后生成的截图与验证 JSON 默认忽略，不纳入源码归档。
+脚本使用 requirements-build.txt 和附带的 ExifTool 13.59。默认安装器与便携主程序输出到 outputs/NefGpsTrack/1.5.2。可提供 -BuildRoot 与 -OutputDirectory 自行指定位置。Windows 安装器首次可选安装路径，覆盖升级沿用已登记路径。
+
+## 核验
+
+qa 中包含 Python 算法、照片格式、安装器逻辑和 CLP 协议向量回归。运行 test_formats.py 时以 NEFGPSTRACK_EXIFTOOL 指定现有 ExifTool。UI 检查需要 Node.js、Playwright 和 Microsoft Edge。发布安装包的检查结果见 [VALIDATION.md](VALIDATION.md)。

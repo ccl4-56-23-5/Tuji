@@ -1,9 +1,9 @@
-/* Render 1.5.1 UI with public synthetic data; Node.js + Playwright + Microsoft Edge. */
+/* Render 1.5.2 UI with public synthetic data; Node.js + Playwright + Microsoft Edge. */
 const fs = require('node:fs');
 const path = require('node:path');
 const Module = require('node:module');
 const repo = path.resolve(__dirname, '..');
-const base = path.join(repo, 'sources/NefGpsTrack/1.5.1');
+const base = path.join(repo, 'sources/NefGpsTrack/1.5.2');
 const scratch = path.join(repo, 'temp/readme-screenshots');
 const imageDir = path.join(__dirname, 'images');
 fs.mkdirSync(scratch, {recursive:true}); fs.mkdirSync(imageDir, {recursive:true});

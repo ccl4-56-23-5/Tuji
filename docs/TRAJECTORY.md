@@ -1,6 +1,6 @@
 # 轨迹怎样从定位点变成照片位置
 
-本文对应 **途记 1.5.1**。先说明原始数据、去漂移节点与插值点的区别，再对照源码写出计算公式。真实记录示例只公开匿名化轨迹图，公式演示另外使用虚构数据。
+本文对应 **途记 1.5.2**。先说明原始数据、去漂移节点与插值点的区别，再对照源码写出计算公式。真实记录示例只公开匿名化轨迹图，公式演示另外使用虚构数据。
 
 ## 1. 两步计算，各自解决什么问题
 
@@ -11,13 +11,13 @@
 | Windows 曲线 | 节点 → `curve` | 以时间为参数，计算节点之间的位置 |
 | 照片匹配 | 拍摄时间 → 匹配点 | 对符合精度条件的节点建立索引，选择精确点、插值或单点 |
 
-手机停止记录后使用 `robust-stop-v2` 处理水平位置，导出原始点与处理后节点，不导出插值曲线。电脑端重建 `pchip-4d-v2`，不信任 CLP 中历史版本携带的曲线系数。已经标记 `robust-stop-v1/v2` 的水平节点不重复去漂移；未识别该标记的旧 CLP 才用 Python 等价实现兜底。
+手机停止记录后使用 `robust-stop-v2` 处理水平位置，导出原始点与处理后节点，不导出插值曲线。电脑端重建 `pchip-4d-v3`，不信任 CLP 中历史版本携带的曲线系数。已经标记 `robust-stop-v1/v2` 的水平节点不重复去漂移；未识别该标记的旧 CLP 才用 Python 等价实现兜底。
 
 去漂移会移动观测节点；插值通过输入节点并计算中间时刻。两步都不会增加真实观测，也不会自动匹配道路。
 
 ## 2. 第一步：水平定位去漂移
 
-实现：[TrackSmoother.java](../sources/NefGpsTrack/1.5.1/android/app/src/main/java/app/nefgpstrack/TrackSmoother.java)；Python 兜底：[smoothing.py](../sources/NefGpsTrack/1.5.1/windows/smoothing.py) 的 `_fit`。
+实现：[TrackSmoother.java](../sources/NefGpsTrack/1.5.2/android/app/src/main/java/app/nefgpstrack/TrackSmoother.java)；Python 兜底：[smoothing.py](../sources/NefGpsTrack/1.5.2/windows/smoothing.py) 的 `_fit`。
 
 ### 2.1 先在局部米制平面中计算
 
@@ -85,7 +85,7 @@ $$
 
 ## 3. 建立照片匹配曲线前，还要筛选节点
 
-[time_match.py](../sources/NefGpsTrack/1.5.1/windows/time_match.py) 的 `build_track_index`：
+[time_match.py](../sources/NefGpsTrack/1.5.2/windows/time_match.py) 的 `build_track_index`：
 
 1. 只接收 `hacc` 非空且不大于 **100 米**的节点。
 2. 同一时间的重复节点，保留 `hacc` 更小者。
@@ -95,7 +95,7 @@ $$
 
 ## 4. PCHIP 插值的完整计算
 
-实现：[curve.py](../sources/NefGpsTrack/1.5.1/windows/curve.py) 的 `slopes`、`build_curve`、`evaluate`。这是本仓库的直接实现，不依赖 SciPy 运行；PCHIP 的方法说明可参照 [SciPy 官方文档](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.PchipInterpolator.html)。
+实现：[curve.py](../sources/NefGpsTrack/1.5.2/windows/curve.py) 的 `slopes`、`build_curve`、`evaluate`。这是本仓库的直接实现，不依赖 SciPy 运行；PCHIP 的方法说明可参照 [SciPy 官方文档](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.PchipInterpolator.html)。
 
 ![虚构节点的折线、PCHIP 与照片查询时刻](images/interpolation-demo.png)
 
@@ -157,21 +157,9 @@ $$
 
 ## 5. 海拔为什么单独处理
 
-![合成海拔：缺失节点、已知节点子曲线及禁止外推范围](images/altitude-demo.png)
+手机保留系统已有的平均海平面高度（MSL），或由 AndroidX 换算。换算失败时海拔保持未知，原始椭球高度单独保存。Windows 的 altitude.py 对同刻观测择优，smoothing.py 在已知海拔时间间隔不超过 120 秒的各段内平滑。
 
-电脑端 `smooth_altitude` 只处理已有海拔的节点，少于三个已知海拔时原样返回。已知海拔噪声尺度根据绝对二阶差分的中位数估计：
-
-$$
-\sigma_z=\mathrm{clip}_{[1,30]}\left(\frac{1.4826}{\sqrt6}\,\mathrm{median}\{|z_{i+1}-2z_i+z_{i-1}|\}\right).
-$$
-
-样本不足或中位数不为正时取 5 米。该规则是工程估计，不是由设备校准得到的真实噪声。随后使用同类鲁棒重加权和速度变化惩罚，海拔惩罚系数为 `0.05`；最多 60 次，更新小于 `10^{-4} m` 时停止。
-
-缺失值在这一步仍为缺失。`curve.py` 另外提取所有海拔已知节点建立 `alt` 子曲线，中间无海拔的水平节点不会截断这条子曲线。首个和末个已知海拔之外不外推；只有一个已知海拔时，子曲线仅在那个时刻有值。
-
-**精确节点与插值分支的区别**：`match_track` 精确命中节点时，直接返回该 `TrackPoint`。如果其海拔是空值，照片海拔保持未知；非精确命中时，才使用 `evaluate` 返回的海拔子曲线结果。因此，单独调用曲线求值和执行精确节点匹配，不一定得到相同的缺失海拔行为。
-
-海拔子曲线相邻已知节点的时间跨度可能比水平节点跨度更大；当前“长间隔估算”分类仅依据水平匹配节点的间隔，没有单独的海拔空档等级。
+curve.py 为每段建立海拔子曲线。time_match.py 在时间精确命中无海拔节点时也检查所属海拔段，只有符合边界条件才补估值。跨越超过 120 秒的海拔空档、已知海拔首尾以外和全程无已知高度时均保持未知。派生高度标为 interpolated-msl，记录前后来源时刻并保留原始观测。
 
 ## 6. 怎样把照片时间变成查询时间
 
@@ -203,12 +191,12 @@ $$
 
 | 入口 | 对应内容 |
 | --- | --- |
-| [TrackDb.java](../sources/NefGpsTrack/1.5.1/android/app/src/main/java/app/nefgpstrack/TrackDb.java) | 原始点、去漂移节点及 CLP 载荷 |
-| [TrackSmoother.java](../sources/NefGpsTrack/1.5.1/android/app/src/main/java/app/nefgpstrack/TrackSmoother.java) | 水平去漂移与静止段约束 |
-| [smoothing.py](../sources/NefGpsTrack/1.5.1/windows/smoothing.py) | 旧 CLP 兜底、海拔处理与加载曲线 |
-| [curve.py](../sources/NefGpsTrack/1.5.1/windows/curve.py) | PCHIP 斜率、经度展开与海拔子曲线 |
-| [time_match.py](../sources/NefGpsTrack/1.5.1/windows/time_match.py) | 精度筛选、照片时间与曲线匹配 |
-| [batch.py](../sources/NefGpsTrack/1.5.1/windows/batch.py) | 多轨迹排序、合并及显示折线 |
+| [TrackDb.java](../sources/NefGpsTrack/1.5.2/android/app/src/main/java/app/nefgpstrack/TrackDb.java) | 原始点、去漂移节点及 CLP 载荷 |
+| [TrackSmoother.java](../sources/NefGpsTrack/1.5.2/android/app/src/main/java/app/nefgpstrack/TrackSmoother.java) | 水平去漂移与静止段约束 |
+| [smoothing.py](../sources/NefGpsTrack/1.5.2/windows/smoothing.py) | 旧 CLP 兜底、海拔处理与加载曲线 |
+| [curve.py](../sources/NefGpsTrack/1.5.2/windows/curve.py) | PCHIP 斜率、经度展开与海拔子曲线 |
+| [time_match.py](../sources/NefGpsTrack/1.5.2/windows/time_match.py) | 精度筛选、照片时间与曲线匹配 |
+| [batch.py](../sources/NefGpsTrack/1.5.2/windows/batch.py) | 多轨迹排序、合并及显示折线 |
 | [render-algorithm-demos.py](render-algorithm-demos.py) | 只用虚构节点重现两幅插值/海拔演示图 |
 
 真实记录的 CLP、解密数据、地点与图形变换参数不在公开仓库中。匿名化图可以帮助理解处理效果，不能作为已完成真机精度标定或道路真值验收的证据。
